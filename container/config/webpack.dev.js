@@ -1,7 +1,6 @@
 // Import required webpack plugins and configurations
 const { merge } = require('webpack-merge');
 const commonConfig = require('./webpack.common');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
 const packageJson = require('../package.json');
 
@@ -22,11 +21,6 @@ const devConfig = {
 
     // Webpack plugins configuration
     plugins: [
-        // Generate an HTML file with the bundled JavaScript automatically injected
-        new HtmlWebpackPlugin({
-            // Use this HTML file as a template
-            template: './public/index.html',
-        }),
         new ModuleFederationPlugin({
             name: 'container',
             remotes: {
