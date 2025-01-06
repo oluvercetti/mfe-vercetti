@@ -7,6 +7,9 @@ const packageJson = require('../package.json');
 const devConfig = {
     // Set mode to development for better debugging and development experience
     mode: 'development',
+    output: {
+        publicPath: 'http://localhost:8080/',
+    },
 
     // Development server configuration
     devServer: {
