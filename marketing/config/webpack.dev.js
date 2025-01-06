@@ -7,6 +7,9 @@ const packageJson = require('../package.json');
 const devConfig = {
     // Set mode to development for better debugging and development experience
     mode: 'development',
+    output: {
+        publicPath: 'http://localhost:8081/',
+    },
 
     // Development server configuration
     devServer: {
@@ -19,11 +22,6 @@ const devConfig = {
 
     // Webpack plugins configuration
     plugins: [
-        // Generate an HTML file with the bundled JavaScript automatically injected
-        new HtmlWebpackPlugin({
-            // Use this HTML file as a template
-            template: './public/index.html',
-        }),
         new ModuleFederationPlugin({
             name: 'marketing',
             filename: 'remoteEntry.js',
