@@ -14,9 +14,7 @@ const devConfig = {
         port: 8081,
 
         // Handle client-side routing by redirecting all requests to index.html
-        historyApiFallback: {
-            index: 'index.html',
-        },
+        historyApiFallback: true,
     },
 
     // Webpack plugins configuration
