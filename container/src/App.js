@@ -6,6 +6,7 @@ import { Skeleton } from '@material-ui/lab';
 
 const MarketingApp = lazy(() => import('./components/MarketingApp'));
 const AuthApp = lazy(() => import('./components/AuthApp'));
+const DashboardApp = lazy(() => import('./components/DashboardApp'));
 
 const generateClassName = createGenerateClassName({
     productionPrefix: 'co',
@@ -29,6 +30,9 @@ export default () => {
                         <Switch>
                             <Route path="/auth">
                                 <AuthApp onSignIn={() => setIsSignedIn(true)} />
+                            </Route>
+                            <Route path="/dashboard">
+                                <DashboardApp />
                             </Route>
                             <Route path="/" component={MarketingApp} />
                         </Switch>
