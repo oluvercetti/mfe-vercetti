@@ -15,6 +15,9 @@ export default () => {
                 }
             },
             initialPath: history.location.pathname,
+            onSignIn: () => {
+                history.push('/');
+            },
         });
 
         history.listen(onParentNavigate);
